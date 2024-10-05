@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeerJS Audio Call</title>
+</head>
+<body>
+    <h1>PeerJS Audio Call</h1>
+    <div>
+        <input type="text" id="peerIdInput" placeholder="Enter Peer ID" />
+        <button id="callButton">Call</button>
+        <button id="endCallButton" disabled>End Call</button>
+    </div>
+    <audio id="localAudio" controls autoplay muted></audio>
+    <audio id="remoteAudio" controls autoplay></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.4.0/dist/peerjs.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
