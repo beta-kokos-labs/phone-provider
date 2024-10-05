@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeerJS Audio Call</title>
-</head>
-<body>
-    <h1 id='id'>PeerJS Audio Call ID: </h1>
-    <div>
-        <input type="text" id="peerIdInput" placeholder="Enter Peer ID" />
-        <button id="callButton">Call</button>
-        <button id="endCallButton" disabled>End Call</button>
-    </div>
-    <audio id="localAudio" autoplay muted></audio>
-    <audio id="remoteAudio" autoplay></audio>
+// Setting a cookie
+document.cookie = "username=JohnDoe; expires=Fri, 31 Dec 2023 23:59:59 GMT; path=/";
 
-    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.3.1/dist/peerjs.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+// Reading a cookie
+const cookies = document.cookie.split(';');
+const getCookieValue = (name) => {
+    const cookie = cookies.find(c => c.trim().startsWith(name + '='));
+    return cookie ? cookie.split('=')[1] : null;
+};
+
+console.log(getCookieValue('username')); // Outputs: JohnDoe
+
+
