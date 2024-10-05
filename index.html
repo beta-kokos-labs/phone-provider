@@ -1,3 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        h2 { text-align: center; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sign Up</h2>
+    <div id="signupForm" class="hidden">
+        <form id="form">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" required><br><br>
+            <label for="birthday">Birthday:</label><br>
+            <input type="date" id="birthday" name="birthday">
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    <div id="welcomeMessage" class="hidden">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeerJS Audio Call</title>
+</head>
+<body>
+    <h1 id='id'>PeerJS Audio Call ID: </h1>
+    <div>
+        <input type="text" id="peerIdInput" placeholder="Enter Peer ID" />
+        <button id="callButton">Call</button>
+        <button id="endCallButton" disabled>End Call</button>
+    </div>
+    <audio id="localAudio" autoplay muted></audio>
+    <audio id="remoteAudio" autoplay></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+    </div>
+</div>
+
+<script>
+    // Function to get a cookie by name
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // Check if the user is already signed up
+    if (getCookie('signedUp')) {
+        document.getElementById('welcomeMessage').classList.remove('hidden');
+    } else {
+        document.getElementById('signupForm').classList.remove('hidden');
+    }
+
+    // Handle the form submission
+    document.getElementById('form').onsubmit = function(event) {
+        const form = event.target;
+
+        // Get the values of the input fields
+        const username = form.username.value;
+        const birthday = form.birthday.value;
+        event.preventDefault(); // Prevent the default form submission
+
+        // Set a cookie to indicate the user has signed up
+        document.cookie = `signedUp=true; path=/; username=${username}; birthday=${birthday}`; // 1 year expiration
+        alert('You have signed up successfully!');
+        
+        // Optionally, hide the sign-up form and show a welcome message
+        document.getElementById('signupForm').classList.add('hidden');
+        document.getElementById('welcomeMessage').classList.remove('hidden');
+    };
+</script>
+
+</body>
+</html>
+
+<!--
 // Setting a cookie
 document.cookie = "username=JohnDoe; expires=Fri, 31 Dec 2023 23:59:59 GMT; path=/";
 
@@ -9,5 +98,4 @@ const getCookieValue = (name) => {
 };
 
 console.log(getCookieValue('username')); // Outputs: JohnDoe
-
-
+-->
