@@ -5,7 +5,7 @@ const callButton = document.getElementById('callButton');
 const endCallButton = document.getElementById('endCallButton');
 
 const peer = new Peer(); // Create a new Peer instance
-
+ 
 peer.on('open', (id) => {
     console.log(`My peer ID is: ${id}`);
     document.getElementById('id').innerText='PeerJS Audio Call ID: '+id
