@@ -51,6 +51,23 @@
 </div>
 
 <script>
+    function generatePhoneNumber() {
+    // Generate the first part (3 digits)
+    const areaCode = Math.floor(100 + Math.random() * 900); // Ensures a 3-digit number
+
+    // Generate the second part (4 digits)
+    const firstPart = Math.floor(1000 + Math.random() * 9000); // Ensures a 4-digit number
+
+    // Generate the third part (4 digits)
+    const secondPart = Math.floor(1000 + Math.random() * 9000); // Ensures a 4-digit number
+
+    // Format the phone number
+    return `${areaCode}-${firstPart}-${secondPart}`;
+}
+
+// Example usage
+console.log(generatePhoneNumber());
+    
     // Function to get a cookie by name
     function getCookie(name) {
         const value = `; ${document.cookie}`;
@@ -75,7 +92,7 @@
         event.preventDefault(); // Prevent the default form submission
 
         // Set a cookie to indicate the user has signed up
-        document.cookie = `signedUp=true; path=/; username=${username}; birthday=${birthday}`; // 1 year expiration
+        document.cookie = `signedUp=true; path=/; username=${username}; birthday=${birthday}; phonenum=${generatePhoneNumber()}`; // 1 year expiration
         alert('You have signed up successfully!');
         
         // Optionally, hide the sign-up form and show a welcome message
