@@ -1,10 +1,16 @@
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
 const localAudio = document.getElementById('localAudio');
 const remoteAudio = document.getElementById('remoteAudio');
 const peerIdInput = document.getElementById('peerIdInput');
 const callButton = document.getElementById('callButton');
 const endCallButton = document.getElementById('endCallButton');
 
-const peer = new Peer(); // Create a new Peer instance
+const peer = new Peer(getCookie(phonenum)); // Create a new Peer instance
  
 peer.on('open', (id) => {
     console.log(`My peer ID is: ${id}`);
