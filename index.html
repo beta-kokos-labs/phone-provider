@@ -76,7 +76,7 @@ console.log(generatePhoneNumber());
     }*/
 
     // Check if the user is already signed up
-    if (getCookie('signedUp')) {
+    if (getCookie('phonenum')) {
         document.getElementById('welcomeMessage').classList.remove('hidden');
     } else {
         document.getElementById('signupForm').classList.remove('hidden');
@@ -92,7 +92,7 @@ console.log(generatePhoneNumber());
         event.preventDefault(); // Prevent the default form submission
 
         // Set a cookie to indicate the user has signed up
-        document.cookie = `signedUp=true; path=/; username=${username}; birthday=${birthday}; phonenum=${generatePhoneNumber()}`; // 1 year expiration
+        document.cookie = `phonenum=${generatePhoneNumber()};`; // 1 year expiration
         alert('You have signed up successfully!');
         
         // Optionally, hide the sign-up form and show a welcome message
