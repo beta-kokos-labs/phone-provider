@@ -30,7 +30,7 @@ const peerIdInput = document.getElementById('peerIdInput');
 const callButton = document.getElementById('callButton');
 const endCallButton = document.getElementById('endCallButton');
 
-const peer = new Peer('phone-user-number'+getCookie('phonenum')); // Create a new Peer instance
+const peer = new Peer('phone-user-number'+getCookie('phone')); // Create a new Peer instance
  
 peer.on('open', (id) => {
     console.log(`My peer ID is: ${id}`);
