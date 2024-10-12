@@ -3,6 +3,11 @@
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
     }*/
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('worker.js');
+}
+
 alert(document.cookie)
 function getCookie(name) {
     // Split document.cookie into individual cookies
@@ -70,6 +75,3 @@ endCallButton.addEventListener('click', () => {
     peer.disconnect(); // Disconnect the peer
     endCallButton.disabled = true;
 });
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('worker.js');
-}
