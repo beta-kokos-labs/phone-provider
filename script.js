@@ -3,6 +3,7 @@
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
     }*/
+alert(document.cookie)
 function getCookie(name) {
     // Split document.cookie into individual cookies
     const cookies = document.cookie.split(';');
