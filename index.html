@@ -37,7 +37,7 @@
     <div>
         <input type="text" id="peerIdInput" placeholder="Enter Peer ID" />
         <button id="callButton">Call</button>
-        <button id="endCallButton" disabled>End Call</button>
+        <button id="endCallButton" disabled>End Call</button><button id="reset">new number</button>
     </div>
     <audio id="localAudio" autoplay muted></audio>
     <audio id="remoteAudio" autoplay></audio>
@@ -96,10 +96,11 @@ console.log(generatePhoneNumber());
         document.cookie = `phonenum=${generatePhoneNumber()};username=${username};birthday=${birthday}`; // 1 year expiration
         alert('You have signed up successfully!');
         
+        
         // Optionally, hide the sign-up form and show a welcome message
         document.getElementById('signupForm').classList.add('hidden');
         document.getElementById('welcomeMessage').classList.remove('hidden');
-    };
+    };document.getElementById('signupForm').onclick =  function(){document.cookie=''}
 </script>
 
 </body>
