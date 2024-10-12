@@ -1,9 +1,29 @@
-    function getCookie(name) {
+/*    function getCookie(name) {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
+    }*/
+function getCookie(name) {
+    // Split document.cookie into individual cookies
+    const cookies = document.cookie.split(';');
+
+    // Loop through the cookies array
+    for (let i = 0; i < cookies.length; i++) {
+        // Trim whitespace and split the cookie name and value
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith(name + '=')) {
+            // Return the value of the cookie
+            return cookie.substring(name.length + 1);
+        }
     }
 
+    // Return null if the cookie is not found
+    return null;
+}
+
+// Example usage
+
+console.log(getCookie('phone'))
 const localAudio = document.getElementById('localAudio');
 const remoteAudio = document.getElementById('remoteAudio');
 const peerIdInput = document.getElementById('peerIdInput');
