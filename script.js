@@ -71,5 +71,5 @@ endCallButton.addEventListener('click', () => {
     endCallButton.disabled = true;
 });
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js');
+  navigator.serviceWorker.register('worker.js');
 }
