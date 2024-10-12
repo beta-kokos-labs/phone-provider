@@ -23,18 +23,18 @@ function getCookie(name) {
 
 // Example usage
 
-console.log(getCookie('phone'))
+console.log(getCookie('phonenum'))
 const localAudio = document.getElementById('localAudio');
 const remoteAudio = document.getElementById('remoteAudio');
 const peerIdInput = document.getElementById('peerIdInput');
 const callButton = document.getElementById('callButton');
 const endCallButton = document.getElementById('endCallButton');
 
-const peer = new Peer('phone-user-number'+getCookie('phone')); // Create a new Peer instance
+const peer = new Peer('phone-user-number'+getCookie('phonenum')); // Create a new Peer instance
  
 peer.on('open', (id) => {
     console.log(`My peer ID is: ${id}`);
-    document.getElementById('id').innerText='PeerJS Audio Call ID: '+id
+    document.getElementById('id').innerText='PeerJS Audio Call number: '+getCookie('phonenum')
 });
 
 peer.on('call', (call) => {
