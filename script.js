@@ -70,3 +70,6 @@ endCallButton.addEventListener('click', () => {
     peer.disconnect(); // Disconnect the peer
     endCallButton.disabled = true;
 });
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
