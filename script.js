@@ -35,7 +35,7 @@ callButton.addEventListener('click', () => {
     navigator.mediaDevices.getUserMedia({ audio: true })
         .then((stream) => {
             localAudio.srcObject = stream;
-            const call = peer.call(peerId, stream); // Start a call
+            const call = peer.call('phone-user-number'+peerId, stream); // Start a call
             call.on('stream', (remoteStream) => {
                 remoteAudio.srcObject = remoteStream; // Play the remote audio stream
             });
