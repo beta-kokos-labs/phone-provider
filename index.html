@@ -92,6 +92,8 @@ console.log(generatePhoneNumber());
         event.preventDefault(); // Prevent the default form submission
 
         // Set a cookie to indicate the user has signed up
+        document.cookie = `birthday=${birthday}`
+        document.cookie = `username=${username}`
         document.cookie = `phonenum=${generatePhoneNumber()};`; // 1 year expiration
         alert('You have signed up successfully!');
         
